@@ -60,7 +60,8 @@ img{
 // main
 
 .wrapper{
-    max-width: 375px;
+    // max-width: 375px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -150,14 +151,9 @@ img{
 
 // responsive
 
-
-@media only screen and (min-width: 1366px) {
+/* mobie medium > */
+@media (min-width: 480px){
     // global
-
-    .btn--green{
-        padding: 15px 91px 15px 91px;
-    }
-
     .btn--icon{
         padding: 14px 16px;
         & img{
@@ -169,15 +165,45 @@ img{
     .btn--icon-text{
         @include flexbox(center);
         border-radius: 9px;
-        padding: 15px 66px 15px 32px;
         gap: 21px;
-        font-size: 16px;
+        // font-size: 13px;
         line-height: 24px;
         & img{
             width: inherit;
             height: auto;
         }
     }
+    //main
+    .sign-in{
+        &__top{
+            @include flexbox(flex-start,space-between);
+            margin-bottom: 0px
+        }
+        &__txt-wellcome{
+            @include flexbox(); 
+        }
+        &__buttons{
+            gap: 20px;
+        }
+        &__forgot{
+            font-size: 13px;
+        }
+    }
+}
+
+/* PC low resolution > */
+
+@media (min-width: 1024px) {
+    // global
+
+    .btn--green{
+        padding: 15px 91px 15px 91px;
+    }
+
+    .btn--icon-text{
+        font-size: 13px;
+    }
+
     //main
     .wrapper{
         max-width: 1440px;
@@ -194,21 +220,13 @@ img{
     .sign-in{
         width: 539px;
         padding: 44px 44px 79px 44px;
-        &__top{
-            @include flexbox(flex-start,space-between);
-            margin-bottom: 0px
-        }
         &__txt-wellcome{
-            @include flexbox(); 
             font-size: 21px;
         }
         &__title{
             margin-bottom: 43px;
             font-size: 55px;
             
-        }
-        &__buttons{
-            gap: 20px;
         }
         &__label{
             font-size: 16px;
@@ -226,7 +244,6 @@ img{
             @include flexbox(end,flex-start,nowrap,column);
         }
         &__forgot{
-            font-size: 13px;
             margin-bottom: 44px;
         }
     }
