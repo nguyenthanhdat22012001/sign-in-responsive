@@ -1,0 +1,234 @@
+@import "./mixin";
+@import "./variables";
+
+// globals
+
+body{
+    font-family: 'Poppins', sans-serif;
+    // line-height: 1.4;
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-black;
+}
+
+img{
+    // display: block;
+    max-width: 100%;
+  }
+
+.btn{
+    cursor: pointer;
+    border: none;
+}
+
+.btn--green{
+    font-weight: 500;
+    font-size: 16px;
+    padding: 15px 47px 15px 48px;
+    background-color: $bgr-green;
+    color: $text-white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 19px rgba(119, 147, 65, 0.3);
+}
+
+.btn--icon{
+    padding: 19px 9px;
+    border-radius: 9px;
+    background-color: $bgr-white;
+    & img{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.btn--icon-text{
+    @include flexbox(center);
+    border-radius: 8px;
+    padding: 19px 9px 19px 24px;
+    background-color: #E9F1FF;
+    gap: 12px;
+    font-size: 12px;
+    color: $text-blues;
+    & img{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+// main
+
+.wrapper{
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+
+.container{
+    width: 100%;
+    padding: 26px 23px 57px 26px;
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+.logo{
+    margin-bottom: 5px;
+    display: block;
+}
+
+.sign-in{
+    background-color: $bgr-light-white;
+    border-radius: 40px;
+    padding: 44px 26px 79px 26px;
+    &__top{
+        @include flexbox(center,space-between);
+        margin-bottom: 14px;
+    }
+    &__txt-wellcome{
+        font-size: 16px;
+        line-height: 24px;
+        & span{
+            color: $text-green;
+        }
+    }
+    &__txt-no-account{
+        font-size: 13px;
+        line-height: 20px;
+        color: $text-light-gray;
+        & a{
+            color: $text-green;
+        }
+    }
+    &__title{
+        margin-bottom: 37px;
+        font-weight: 500;
+        font-size: 40px;
+    }
+    &__buttons{
+        @include flexbox(center);
+        gap: 12px;
+        margin-bottom: 49px;
+    }
+    &__form-group:first-child{
+        margin-bottom: 36px;
+    }
+    &__form-group:nth-child(2)  {
+        margin-bottom: 12px;
+    }
+    &__label{
+        display:inline-block;
+        margin-bottom: 16px;
+    }
+    &__input{
+        border: 1px solid #ADADAD;
+        border-radius: 9px;
+        padding: 19px 75px 19px 15px;
+        width: 100%;
+    }
+    &__input:placeholder{
+        font-size: 13px;
+        font-weight: 300;
+        color: $text-gray;
+    }
+    &__input:focus{
+        outline: none;
+        border: 1px solid $bgr-blues;
+    }
+    &__action{
+        margin-right: 1px;
+        @include flexbox(end,flex-start,nowrap,column);
+    }
+    &__forgot{
+        font-size: 11px;
+        color: $text-blues;
+        margin-bottom: 47px;
+        display: block;
+    }
+}
+
+// responsive
+
+
+@media only screen and (min-width: 1366px) {
+    // global
+
+    .btn--green{
+        padding: 15px 91px 15px 91px;
+    }
+
+    .btn--icon{
+        padding: 14px 16px;
+        & img{
+            width: inherit;
+            height: auto;
+        }
+    }
+    
+    .btn--icon-text{
+        @include flexbox(center);
+        border-radius: 9px;
+        padding: 15px 66px 15px 32px;
+        gap: 21px;
+        font-size: 16px;
+        line-height: 24px;
+        & img{
+            width: inherit;
+            height: auto;
+        }
+    }
+    //main
+    .wrapper{
+        max-width: 1440px;
+    }
+    .container{
+        padding: 30px 118px 80px 30px;
+    }
+    .logo{
+        margin-bottom: 2px;
+    }
+    .box-sign-in{
+        @include flexbox(flex-start,flex-end); 
+    }
+    .sign-in{
+        width: 539px;
+        padding: 44px 44px 79px 44px;
+        &__top{
+            @include flexbox(flex-start,space-between);
+            margin-bottom: 0px
+        }
+        &__txt-wellcome{
+            @include flexbox(); 
+            font-size: 21px;
+        }
+        &__title{
+            margin-bottom: 43px;
+            font-size: 55px;
+            
+        }
+        &__buttons{
+            gap: 20px;
+        }
+        &__label{
+            font-size: 16px;
+            margin-bottom: 13px;
+        }
+        &__input{
+            font-size: 14px;
+            padding: 19px 124px 19px 25px;
+        }
+        &__input:placeholder{
+            font-size: 14px;
+        }
+        &__action{
+            margin-right: 0;
+            @include flexbox(end,flex-start,nowrap,column);
+        }
+        &__forgot{
+            font-size: 13px;
+            margin-bottom: 44px;
+        }
+    }
+
+}
