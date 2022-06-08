@@ -47,11 +47,11 @@
                         <form class="sign-in__form">
                             <div class="sign-in__form-group">
                                 <label for="username" class="sign-in__label">Enter your username or email address</label>
-                                <input class="sign-in__input" type="text" id="username" placeholder="Username or email address" required minlength="8">
+                                <input class="sign-in__input" type="text" id="username" placeholder="Username or email address" required minlength="8" maxlength="40">
                             </div>
                             <div class="sign-in__form-group">
                                 <label for="password" class="sign-in__label">Enter your Password</label>
-                                <input class="sign-in__input" type="password" id="password" placeholder="Password" required minlength="8">                          
+                                <input class="sign-in__input" type="password" id="password" placeholder="Password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">                          
                             </div>
                             <div class="sign-in__action">
                                 <a href="#" class="sign-in__forgot">Forgot Password</a>
